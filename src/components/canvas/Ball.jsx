@@ -7,11 +7,11 @@ import {
   Preload,
   useTexture,
 } from "@react-three/drei";
-
 import CanvasLoader from "../Loader";
 
 const Ball = (props) => {
-  const [decal] = useTexture([props.imgUrl]);
+  // Fallback to a default texture if imgUrl is invalid
+  const [decal] = useTexture([props.imgUrl || "/default-image.jpg"]); // Default image
 
   return (
     <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
