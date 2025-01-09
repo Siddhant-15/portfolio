@@ -10,7 +10,7 @@ import {
 import CanvasLoader from "../Loader";
 
 const Ball = (props) => {
-  const [decal] = useTexture([props.imgUrl || "/default-image.jpg"]); // Default image
+  const [decal] = useTexture([props.imgUrl]); // Default image
 
   // Check if decal is loaded, otherwise return null
   if (!decal) return null;
