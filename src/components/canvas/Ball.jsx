@@ -10,8 +10,10 @@ import {
 import CanvasLoader from "../Loader";
 
 const Ball = (props) => {
-  // Fallback to a default texture if imgUrl is invalid
   const [decal] = useTexture([props.imgUrl || "/default-image.jpg"]); // Default image
+
+  // Check if decal is loaded, otherwise return null
+  if (!decal) return null;
 
   return (
     <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
@@ -36,6 +38,7 @@ const Ball = (props) => {
     </Float>
   );
 };
+
 
 const BallCanvas = ({ icon }) => {
   return (
